@@ -1,7 +1,7 @@
 # j2x
 Transliterate Japanese words in kana(hiragana or katakana) into other writing systems
 
-  Written in haxe, it can be compiled into haxe's upported languages/platforms.
+  Written in haxe, it can be compiled into haxe's supported languages/platforms.
 
 Current availability:
 - kana to romaji(Roman transliteration)
