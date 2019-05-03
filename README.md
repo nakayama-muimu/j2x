@@ -6,7 +6,7 @@ Transliterate Japanese words in kana(hiragana or katakana) into other writing sy
 Current availability:
 - kana to romaji(Roman transliteration)
 - kana to Arabic script
-- kana to Hangul script
+- kana to Korean(Hangul) script
 
 How to build:
 - Get and install haxe (https://haxe.com)
@@ -15,6 +15,7 @@ How to build:
 Build results:
 - 'J2x_lang.js' is common module
 - 'J2x_ar.js' is module for Arabic
+- 'J2x_kr.js' is module for Korean(Hangul)
 
 How to use:
 - Refer to 'j2x_example.html'
