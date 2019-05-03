@@ -1,0 +1,11 @@
+--each
+
+J2x_lang.hx
+-js J2x_lang.js
+
+--next
+
+J2x_ar.hx
+-js J2x_ar.js
+
+ 
