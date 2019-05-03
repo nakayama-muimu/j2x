@@ -9,7 +9,7 @@ Current availability:
 
 How to build:
 - Get and install haxe (https://haxe.com)
-- Execute in terminal 'haxe build_ar.html'
+- Execute in terminal 'haxe build_js.hxml'
 
 Build results:
 - 'J2x_lang.js' is common module
