@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport" />
+	<script src="J2x_lang.js"></script>
+	<script src="J2x_ar.js"></script>
+</head>
+<body ontouchmove="event.preventDefault()">
+	<div>
+	<h4>「ひらがな」または「カタカナ」で単語を入力してください。Input words in <i>hiragana</i> or <i>katakana</i>.</h4>
+	　・半角または全角のスペースで単語を区切ります。Separate each word with a space.<br>
+	　・読みやすくするためには，なるべく区切ることをお勧めします。The more separation, the more readable result.<br>
+	　　（例）「東新宿」：ひがししんじゅく→Higashishinjuku，ひがし しんじゅく→Higashi Shinjuku<br>
+	　・%で囲むと，変換せずにそのまま出力します。Put % on the beginning and end of the word to cancel tranxcription.<br>
+	　　（例）とうきょう すかい つりー %Tokyo Skytree%<br>
+	<br>
+	<input type="text" id="input_kana" size="40"><br>
+	語頭を大文字にする Capitalize beginning of the word :
+	<label><input id="init_cap_yes" type="radio" name="init_cap" value="yes" checked>Yes</label>
+	<label><input id="init_cap_no" type="radio" name="init_cap" value="No">No</label><br>
+	<br>
+	<table>
+	<tr><td>音節分解 Split syllables</td><td>：<span id="phon"> -</span><td></tr>
+	<tr><td>ローマ字通常 Normal romanization</td><td>：<span id="roman"> -</span></td></tr>
+<!--
+	<tr><td>ハングル Hangul</td><td>：<span id="kr"> -</span></td><tr>
+-->
+	<tr><td>アラビア文字 Arabic</td><td>：<span id="ar" style="font-size: 16pt;"> -</span></td></tr>
+	</table>
+	</div>
+	<div id="message"></div>
+	<script type="text/javascript">
+(function () { "use strict";
+
+window.addEventListener("load", function(){
+	gebi('input_kana').addEventListener("keypress", cbKeypress, false);
+	gebi('init_cap_yes').addEventListener("click", cbKeypress, false);
+	gebi('init_cap_no').addEventListener("click", cbKeypress, false);
+}, false);
+
+function cbKeypress(ev){
+	var sKana = gebi('input_kana').value;
+	var oRoman = gebi('roman');
+	var oPhon = gebi('phon');
+	var oKr = gebi('kr');
+	var oAr = gebi('ar');
+	var j2x = window.J2x_lang;
+	var phonArray = j2x.hira2phonArray(sKana);
+	var cap_init = true;
+	if(!gebi('init_cap_yes').checked){
+		cap_init = false;
+	}
+	oRoman.innerHTML = j2x.phon2roman(phonArray, cap_init);
+	oPhon.innerHTML = phonArray;
+	//oKr.innerHTML =km.phon2kr(phonArray);
+	var j2x_ar = window.J2x_ar;
+	oAr.innerHTML = j2x_ar.phon2x(phonArray);
+}
+
+function gebi(id){
+	return document.getElementById(id);
+}
+
+})();
+	</script>
+</body>
+</html>
+
+
