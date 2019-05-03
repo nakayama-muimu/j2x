@@ -13,7 +13,7 @@ Note: version for Persian should be made, which uses additional letters in Persi
 @:expose
 @:keep
 class J2x_ar extends J2x_lang{
-	static var arKana = [];
+	static var arKana = []; // Counterpart of phonKana in J2x_lang
 
 /*	
 	private static function u(c:Int){

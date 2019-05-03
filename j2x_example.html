@@ -5,6 +5,7 @@
 	<meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport" />
 	<script src="J2x_lang.js"></script>
 	<script src="J2x_ar.js"></script>
+	<script src="J2x_kr.js"></script>
 </head>
 <body ontouchmove="event.preventDefault()">
 	<div>
@@ -23,9 +24,7 @@
 	<table>
 	<tr><td>音節分解 Split syllables</td><td>：<span id="phon"> -</span><td></tr>
 	<tr><td>ローマ字通常 Normal romanization</td><td>：<span id="roman"> -</span></td></tr>
-<!--
 	<tr><td>ハングル Hangul</td><td>：<span id="kr"> -</span></td><tr>
--->
 	<tr><td>アラビア文字 Arabic</td><td>：<span id="ar" style="font-size: 16pt;"> -</span></td></tr>
 	</table>
 	</div>
@@ -53,7 +52,8 @@ function cbKeypress(ev){
 	}
 	oRoman.innerHTML = j2x.phon2roman(phonArray, cap_init);
 	oPhon.innerHTML = phonArray;
-	//oKr.innerHTML =km.phon2kr(phonArray);
+	var j2x_kr = window.J2x_kr;
+	oKr.innerHTML =j2x_kr.phon2x(phonArray);
 	var j2x_ar = window.J2x_ar;
 	oAr.innerHTML = j2x_ar.phon2x(phonArray);
 }

@@ -119,6 +119,7 @@ class J2x_lang{
 					}
 					ret += s.substring(i + 1, i2);
 					i = i2 + 1;
+					after_space = true;
 					continue;
 				}
 				ret += s.charAt(i);

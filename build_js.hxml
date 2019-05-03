@@ -8,4 +8,7 @@ J2x_lang.hx
 J2x_ar.hx
 -js J2x_ar.js
 
- 
+ --next
+
+J2x_kr.hx
+-js J2x_kr.js
