@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport" />
+	<title>Code Check</title>
+	<script type="text/javascript">
+
+/*
+Bugs:
+- Becomes out of control if touched by two or more fingers... (2019-04-28)
+*/
+
+(function () { "use strict";
+
+window.addEventListener("load", cbOnLoad, false);
+
+function cbOnLoad(ev){
+	gebi("bt1").addEventListener("click", cbCheck, false);
+	gebi("input_text").addEventListener("input", cbCheck, false);
+}
+
+function cbCheck(ev){
+	var s = gebi("input_text").value;
+	var rslt_length = s.length;
+	var rslt_code = s.charCodeAt(0).toString(16);
+	for(var i = 1; i < rslt_length; i++){
+		rslt_code += ", " + s.charCodeAt(i).toString(16);
+	}
+	gebi("rslt_length").innerHTML = rslt_length;
+	gebi("rslt_code").innerHTML = rslt_code;
+}
+
+function gebi(id){
+	return document.getElementById(id);
+}
+
+})();
+
+
+	</script>
+	<style type="text/css">
+.item1{
+	display: inline-block;
+	width: 5rem;
+}
+	</style>
+</head>
+<body>
+<div>
+<input type="text" size="20" id="input_text">
+<input type="button" id="bt1" value="check!">
+</div>
+<div id="result">
+<span class="item1">length</span>: <span id="rslt_length">-</span><br>
+<span class="item1">unicode</span>: <span id="rslt_code">-</span><br>
+</div>
+</body>
+</html>

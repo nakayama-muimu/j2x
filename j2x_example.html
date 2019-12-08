@@ -33,7 +33,7 @@
 (function () { "use strict";
 
 window.addEventListener("load", function(){
-	gebi('input_kana').addEventListener("keypress", cbKeypress, false);
+	gebi('input_kana').addEventListener("input", cbKeypress, false);
 	gebi('init_cap_yes').addEventListener("click", cbKeypress, false);
 	gebi('init_cap_no').addEventListener("click", cbKeypress, false);
 }, false);
