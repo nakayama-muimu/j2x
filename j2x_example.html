@@ -10,12 +10,24 @@
 <body>
 	<div>
 	<h4>「ひらがな」または「カタカナ」で単語を入力してください。Input words in <i>hiragana</i> or <i>katakana</i>.</h4>
-	　・半角または全角のスペースで単語を区切ります。Separate each word with a space.<br>
-	　・読みやすくするためには，なるべく区切ることをお勧めします。The more separation, the more readable result.<br>
-	　　（例）「東新宿」：ひがししんじゅく→Higashishinjuku，ひがし しんじゅく→Higashi Shinjuku<br>
-	　・%で囲むと，変換せずにそのまま出力します。Put % on the beginning and end of the word to cancel tranxcription.<br>
-	　　（例）とうきょう すかい つりー %Tokyo Skytree%<br>
-	<br>
+	<ul>
+		<li>
+			半角または全角のスペースで単語を区切ります。Separate each word with a space.
+		</li>
+		<li>
+			読みやすくするためには，なるべく区切ることをお勧めします。The more separation, the more readable result.<br>
+			（例）「東新宿」<br>
+			　　　ひがししんじゅく → Higashishinjuku<br>
+			　　　ひがし しんじゅく → Higashi Shinjuku
+		</li>
+		<li>
+			%で囲むと，変換せずにそのまま出力します。Put % on the beginning and end of the word to cancel tranxcription.<br>
+			（例）「東京スカイツリー」<br>
+			　　　とうきょう すかい つりー → Tokyo Sukai Tsurii<br>
+			　　　%Tokyo Skytree% → Tokyo Skytree
+		</li>
+	</ul>
+
 	<input type="text" id="input_kana" size="40"><br>
 	語頭を大文字にする Capitalize beginning of the word :
 	<label><input id="init_cap_yes" type="radio" name="init_cap" value="yes" checked>Yes</label>
@@ -29,6 +41,11 @@
 	</table>
 	</div>
 	<div id="message"></div>
+
+	<br><br><br>
+	<a href="https://nakayama-muimu.github.io">Go back to https://nakayama-muimu.github.io</a>
+
+
 	<script type="text/javascript">
 (function () { "use strict";
 
